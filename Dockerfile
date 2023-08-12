@@ -1,6 +1,6 @@
 FROM nextcloud:apache
 
-COPY custom_config.php /var/www/html/config/custom_config.php
+COPY custom_config.php /usr/src/nextcloud/config/custom_config.php
 
 RUN set -ex; \
     \
