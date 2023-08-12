@@ -1,5 +1,8 @@
 FROM nextcloud:apache
 
+ARG PHONE_REGION
+ENV PHONE_REGION=$PHONE_REGION
+
 RUN set -ex; \
     \
     apt-get update; \
