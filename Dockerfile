@@ -1,7 +1,6 @@
 FROM nextcloud:apache
 
-ARG PHONE_REGION
-ENV PHONE_REGION=$PHONE_REGION
+COPY custom_config.php /var/www/html/config/custom_config.php
 
 RUN set -ex; \
     \
