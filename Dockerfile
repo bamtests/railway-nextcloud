@@ -10,7 +10,7 @@ RUN set -ex; \
         ghostscript \
         libmagickcore-6.q16-6-extra \
         procps \
-        smbclient \
+#       smbclient \
         supervisor \
 #       libreoffice \
     ; \
