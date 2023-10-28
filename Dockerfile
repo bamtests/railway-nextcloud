@@ -1,7 +1,5 @@
 FROM nextcloud:apache
 
-COPY custom_config.php /usr/src/nextcloud/config/custom_config.php
-
 RUN set -ex; \
     \
     apt-get update; \
