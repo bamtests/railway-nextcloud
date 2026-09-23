@@ -48,7 +48,7 @@ RUN set -ex; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*
 
-COPY custom.config.php /usr/src/nextcloud/config/custom.config.php
+#COPY custom.config.php /usr/src/nextcloud/config/custom.config.php
 
 RUN mkdir -p \
     /var/log/supervisord \
