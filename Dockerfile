@@ -8,7 +8,6 @@ RUN set -ex; \
         ghostscript \
         libmagickcore-7.q16-10-extra \
         procps \
-        smbclient \
         supervisor \
 #       libreoffice \
     ; \
@@ -21,17 +20,12 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         libbz2-dev \
-        libkrb5-dev \
-        libsmbclient-dev \
     ; \
     \
     docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     docker-php-ext-install \
         bz2 \
-        imap \
     ; \
-    pecl install smbclient; \
-    docker-php-ext-enable smbclient; \
     \
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
     apt-mark auto '.*' > /dev/null; \
