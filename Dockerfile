@@ -1,25 +1,11 @@
 FROM nextcloud:apache
 
-RUN set -ex; \
-    \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-        ffmpeg \
-        ghostscript \
-        libmagickcore-7.q16-10-extra \
-        procps \
-        supervisor \
-#       libreoffice \
-    ; \
-    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-    rm -rf /var/lib/apt/lists/*
-
-#COPY custom.config.php /usr/src/nextcloud/config/custom.config.php
-
-RUN mkdir -p \
-    /var/log/supervisord \
-    /var/run/supervisord \
-;
+RUN apt-get update && apt-get install -y \
+    supervisor \
+    ffmpeg \
+    libmagickcore-7.q16-10-extra \
+  && rm -rf /var/lib/apt/lists/* \
+  && mkdir /var/log/supervisord /var/run/supervisord
 
 COPY supervisord.conf /
 
