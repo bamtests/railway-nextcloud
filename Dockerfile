@@ -6,7 +6,7 @@ RUN set -ex; \
     apt-get install -y --no-install-recommends \
         ffmpeg \
         ghostscript \
-#        libmagickcore-6.q16-6-extra \
+        libmagickcore-7.q16-10-extra \
         procps \
         smbclient \
         supervisor \
@@ -21,7 +21,6 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         libbz2-dev \
-        libc-client-dev \
         libkrb5-dev \
         libsmbclient-dev \
     ; \
