@@ -5,8 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     libmagickcore-7.q16-10-extra \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir /var/log/supervisord /var/run/supervisord; \
-
+    && mkdir /var/log/supervisord /var/run/supervisord
 
 COPY supervisord.conf /
 
