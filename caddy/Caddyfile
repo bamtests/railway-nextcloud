@@ -1,0 +1,9 @@
+{$RAILWAY_PUBLIC_DOMAIN} {
+    reverse_proxy railway-nextcloud.railway.internal:80
+    
+    header {
+        Strict-Transport-Security "max-age=15552000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+    }
+}
