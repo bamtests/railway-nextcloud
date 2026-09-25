@@ -1,4 +1,4 @@
-FROM nextcloud:apache
+FROM nextcloud:35-apache
 
 RUN set -ex; \
     apt-get update && apt-get install -y --no-install-recommends \
