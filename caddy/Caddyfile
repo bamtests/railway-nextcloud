@@ -1,17 +1,7 @@
 :{$PORT} {
-    reverse_proxy {$railway-nextcloud.RAILWAY_PRIVATE_DOMAIN}:80 {
-        # These placeholders are CADDY's built-ins (no setup needed):
-        header_up Host {upstream_host}
-        header_up X-Real-IP {remote_host}
-        header_up X-Forwarded-Proto http
-        header_up X-Forwarded-Host {host}
-        header_up X-Forwarded-Port {port}
-    }    
+    reverse_proxy {$railway-nextcloud.RAILWAY_PRIVATE_DOMAIN}:80
     header {
         Strict-Transport-Security "max-age=15552000; includeSubDomains"
         X-Content-Type-Options "nosniff"
-        X-Frame-Options "SAMEORIGIN"
-        X-XSS-Protection "1; mode=block"
-        Referrer-Policy "strict-origin-when-cross-origin"
     }
 }
