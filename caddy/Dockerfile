@@ -8,4 +8,4 @@ RUN sh /build.sh
 FROM caddy:alpine
 
 COPY --from=builder /usr/local/bin/caddy-custom /usr/bin/caddy
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY ./caddy/Caddyfile /etc/caddy/Caddyfile
