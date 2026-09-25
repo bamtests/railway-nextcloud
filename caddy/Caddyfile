@@ -1,11 +1,5 @@
 :{$PORT} {
-    reverse_proxy {$railway-nextcloud.RAILWAY_PRIVATE_DOMAIN} {
-        header_up Host {upstream_host}
-        header_up X-Real-IP {remote_host}
-        header_up X-Forwarded-Proto http
-        header_up X-Forwarded-Host {host}
-        header_up X-Forwarded-Port {port}
-    }
+    reverse_proxy {$railway-nextcloud.RAILWAY_PRIVATE_DOMAIN}
     
     header {
         Strict-Transport-Security "max-age=15552000; includeSubDomains"
